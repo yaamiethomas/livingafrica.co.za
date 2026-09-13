@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Living Africa</title>
+<meta name="description" content="Get in touch with Living Africa about a potential deal, partnership, or opportunity on the East Rand.">
+<link rel="icon" href="assets/logo-mark.jpg">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a href="index.html" class="brand">
+      <img src="assets/logo-mark.jpg" alt="Living Africa">
+      <span>LIVING AFRICA</span>
+    </a>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="team.html">Team</a>
+      <a href="contact.html" aria-current="page">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section class="page-banner">
+  <div class="wrap">
+    <div class="section-tag">CONTACT</div>
+    <h1>Talk to us about a deal.</h1>
+    <p>Whether it's land, a development partnership, or funding a phase of an existing project — tell us briefly what you have in mind.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="contact-grid">
+      <div>
+        <!--
+          FORM SETUP (do this before going live):
+          1. Create a free account at https://formspree.io
+          2. Create a new form and copy its endpoint, e.g. https://formspree.io/f/xxxxabcd
+          3. Replace YOUR_FORM_ID below with that ID.
+          Until this is done, the form will not actually send anywhere.
+        -->
+        <form id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+          <div class="field">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          <div class="field">
+            <label for="company">Company / organisation</label>
+            <input type="text" id="company" name="company">
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="field">
+            <label for="topic">This is about</label>
+            <select id="topic" name="topic">
+              <option>A potential deal or land opportunity</option>
+              <option>Partnership or funding enquiry</option>
+              <option>An existing project (tenant, buyer, or supplier)</option>
+              <option>Something else</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Send message</button>
+          <p class="form-note">We reply directly by email — usually within a couple of days.</p>
+          <div class="form-success" id="formSuccess">Thanks — your message has been sent. We'll be in touch shortly.</div>
+        </form>
+      </div>
+
+      <div class="contact-details">
+        <h4>EMAIL</h4>
+        <a href="mailto:info@livingafrica.co.za">info@livingafrica.co.za</a>
+
+        <h4>LOCATIONS</h4>
+        <p>Ekurhuleni, Gauteng — primary development region<br>Ballito, KwaZulu-Natal — group base</p>
+
+        <h4>OFFICE HOURS</h4>
+        <p>Monday – Friday<br>08:00 – 17:00 SAST</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="assets/logo-mark-black.jpg" alt="Living Africa">
+        <p>A South African property investment and development group active in East Rand land, residential development, solar energy and income-producing property.</p>
+      </div>
+      <div class="footer-nav">
+        <h4>SITE</h4>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="team.html">Team</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-contact">
+        <h4>GET IN TOUCH</h4>
+        <a href="contact.html">Contact form →</a>
+        <p>Ekurhuleni &amp; KwaZulu-Natal, South Africa</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> Living Africa Holdings (Pty) Ltd</span>
+      <span>Ekurhuleni, Gauteng · Ballito, KwaZulu-Natal</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/script.js"></script>
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+
+var form = document.getElementById('contactForm');
+form.addEventListener('submit', function (e) {
+  e.preventDefault();
+  var data = new FormData(form);
+  fetch(form.action, {
+    method: 'POST',
+    body: data,
+    headers: { 'Accept': 'application/json' }
+  }).then(function (response) {
+    if (response.ok) {
+      form.reset();
+      form.style.display = 'none';
+      document.getElementById('formSuccess').style.display = 'block';
+    } else {
+      alert('Something went wrong sending your message — please email info@livingafrica.co.za directly.');
+    }
+  }).catch(function () {
+    alert('Something went wrong sending your message — please email info@livingafrica.co.za directly.');
+  });
+});
+</script>
+</body>
+</html>
