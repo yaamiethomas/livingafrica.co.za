@@ -147,13 +147,13 @@ p:last-child{margin-bottom:0}
 
 /* ---------- team ---------- */
 .people{margin-top:clamp(28px,5vw,44px);max-width:800px}
-.person{display:grid;grid-template-columns:200px minmax(0,1fr);gap:clamp(22px,4vw,44px);align-items:start;padding:34px 0;border-top:1px solid var(--rule)}
+.person{display:grid;grid-template-columns:100px minmax(0,1fr);gap:clamp(20px,3vw,36px);align-items:start;padding:34px 0;border-top:1px solid var(--rule)}
 .person:first-child{border-top:1px solid var(--rule-strong)}
 .person img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover}
 .person .nophoto{
   width:100%;aspect-ratio:4/5;background:var(--pale);border:1px solid var(--rule);
   display:flex;align-items:center;justify-content:center;
-  font-family:var(--display);font-size:2.4rem;font-weight:300;color:var(--rule-strong);
+  font-family:var(--display);font-size:1.3rem;font-weight:300;color:var(--rule-strong);
 }
 .person h3{font-size:1.35rem;font-weight:500}
 .person .role{font-family:var(--display);font-size:14px;letter-spacing:.09em;text-transform:uppercase;color:var(--blue-deep);margin:4px 0 14px}
@@ -201,7 +201,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offse
   .figure:nth-child(odd){border-left:0;padding-left:0}
   .figure:nth-child(n+3){border-top:1px solid var(--rule)}
   .intro-grid,.contact-grid{grid-template-columns:1fr}
-  .person{grid-template-columns:150px minmax(0,1fr)}
+  .person{grid-template-columns:100px minmax(0,1fr)}
   .pipeline{grid-template-columns:1fr}
   .entry{grid-template-columns:1fr;gap:12px}
   .record-row{grid-template-columns:76px 1fr;gap:12px 20px}
@@ -211,7 +211,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offse
 @media (max-width:720px){
   body{font-size:16.5px}
   .person{grid-template-columns:1fr;gap:18px}
-  .person img,.person .nophoto{max-width:220px}
+  .person img,.person .nophoto{max-width:110px}
   .nav-toggle{display:flex;align-items:center;justify-content:center}
   .main-nav{
     display:none;position:absolute;top:100%;left:0;right:0;
